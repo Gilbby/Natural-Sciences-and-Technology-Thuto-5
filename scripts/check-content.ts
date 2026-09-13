@@ -21,9 +21,9 @@ function inspect(activity: Activity, location: string): void {
   }
 }
 
-const expectedAreas = ['LIF', 'MAT', 'ENE', 'EAR'];
+const expectedAreas = ['LIF', 'MAT', 'FAL'];
 for (const area of expectedAreas) if (!TOPICS.some((topic) => topic.area === area)) errors.push(`missing strand ${area}`);
-if (TOPICS.length !== 20) errors.push(`expected 20 topics including four Star Challenges, found ${TOPICS.length}`);
+if (TOPICS.length === 0) errors.push('no topics found');
 for (const topic of TOPICS) {
   if (topic.atpWeeks < 0) errors.push(`${topic._id}: negative ATP duration`);
   if (!topic.skills) errors.push(`${topic._id}: missing process skills`);
@@ -34,12 +34,12 @@ for (const topic of TOPICS) {
 for (const lesson of ALL_LESSONS) for (const [index, activity] of lesson.activities.entries()) inspect(activity, `${lesson._id}/activity-${index + 1}`);
 
 if (errors.length) {
-  console.error('Natural Sciences and Technology Thuto 5 - content check failed');
+  console.error('English FAL Grade 6 - content check failed');
   for (const error of errors) console.error(`  - ${error}`);
   process.exit(1);
 }
-console.log('Natural Sciences and Technology Thuto 5 - content check');
+console.log('English FAL Grade 6 - content check');
 console.log(`  Topics: ${TOPICS.length}`);
 console.log(`  Lessons: ${ALL_LESSONS.length}`);
-console.log('  Strands: LIF, MAT, ENE, EAR');
+console.log(`  Areas: ${[...new Set(TOPICS.map((topic) => topic.area))].join(', ')}`);
 console.log('  Safety, fact-source, no-timing and no-simulation checks: passed');

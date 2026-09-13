@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Natural Sciences and Technology Thuto 5",
-    "slug": "natural-sciences-technology-thuto-5",
-    "scheme": "nstthuto5",
+    "name": "English FAL Grade 6 Thuto 6",
+    "slug": "en-fal-g6",
+    "scheme": "enfal6",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,10 +14,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "za.co.thuto.nstech5"
+      "bundleIdentifier": "za.co.thuto.enfal6"
     },
     "android": {
-      "package": "za.co.thuto.nstech5",
+      "package": "za.co.thuto.enfal6",
       "adaptiveIcon": {
         "backgroundColor": "#7E57C2",
         "foregroundImage": "./assets/android-icon-foreground.png",

@@ -75,9 +75,9 @@ function numberDay(id: string, value: number, columns: number, say: string): Act
 
 const numberOfDay: DailyRhythm = {
   _id: 'number-of-day',
-  title: txt('Science Word of the Day'),
-  subtitle: txt('Hear a science word and say what it means.'),
-  emoji: '🔬',
+  title: txt('Number of the Day'),
+  subtitle: txt('Hear the number of the day and say how it is written.'),
+  emoji: '🔢',
   colour: colours.primary,
   // Reuses the inherited `wordAdded` flag; the day's number is the "word".
   marks: 'wordAdded',

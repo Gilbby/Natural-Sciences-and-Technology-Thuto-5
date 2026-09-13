@@ -89,16 +89,20 @@ export interface AudioPrompt {
 }
 
 /**
- * The five content areas of CAPS Intermediate Phase Mathematics (PRD §5.2).
+ * The content areas of CAPS Intermediate Phase English First Additional
+ * Language (PRD §5.2).
  *
- *   NUM  Numbers, Operations and Relationships
- *   PAT  Patterns, Functions and Algebra
- *   SPA  Space and Shape (Geometry)
- *   MEA  Measurement
- *   DAT  Data Handling, including Probability
+ *   LIF  Language: structure and conventions (the grammar backbone)
+ *   ENE  Listening and Speaking
+ *   EAR  Reading and Viewing
+ *   FAL  The extended language work the ATP names for its own sake
+ *        (the novel, the drama, the whole-text response)
+ *   MAT  Inherited from the mathematics source of this engine;
+ *        not used in English FAL
  *
- * Carried unchanged from *Mathematics Thuto 4*, spoken labels and all. This
- * ATP's eighteen topics fall into exactly these five.
+ * In a language ATP the **text kind is the curriculum** — a topic is named for
+ * the text it reads (reports, novels, plays, poems, folklore...). The content
+ * area is still a label on the topic and a column in the progress record.
  *
  * > **Note what this list does *not* do. It does not drive the lesson split.**
  * > In *Life Skills Thuto 5* — the repo this engine came from — a topic was
@@ -108,7 +112,7 @@ export interface AudioPrompt {
  * > on the topic and a column in the progress record, and the singular is the
  * > point: a topic that needed two of these would be two topics.
  */
-export type ContentArea = 'LIF' | 'MAT' | 'ENE' | 'EAR';
+export type ContentArea = 'LIF' | 'ENE' | 'EAR' | 'FAL' | 'MAT';
 
 /**
  * One nameable thing a child can do — PRD §8.2. **[new, and load-bearing.]**
@@ -175,24 +179,49 @@ export type MovementSpace = 'standing' | 'one-arm' | 'a-few-steps' | 'outdoors-o
 export type TermNumber = 1 | 2 | 3 | 4;
 
 /**
- * The kinds of text this subject reads. **Three, and it is a rendering hint.**
+ * The kinds of text this subject reads. **A reading hint, and now a fork.**
  *
  * *English FAL Thuto 5* had eleven of these because in a language ATP the text
- * type **is** the curriculum — a topic is *named* for the text it reads. **This
- * one is not.** A mathematics ATP names topics, concepts and skills, and the
- * text is how the app carries them. **A fork that grows this union has
- * misunderstood what it is for** (PRD §7.4).
+ * type **is** the curriculum — a topic is *named* for the text it reads. The
+ * mathematics source does not: it names topics, concepts and skills, and the
+ * text is how the app carries them. **This fork is the source, grown.** English
+ * FAL is a language ATP, so here the text type is back to being the curriculum:
+ * a topic is named for the text it reads, and the union below is the ATP's own
+ * list (PRD §7.4). It is still a rendering hint — the renderer dispatches on
+ * the activity `kind`, not on this value — and `entryModeFor` routes types
+ * it does not know to a safe default.
  *
- *   `worked-example`  **this subject's spine** — PRD §6.5a. Every topic opens
- *                     with one. Its lines are numbered **steps**, the working
- *                     is set aligned, every step speaks on tap, and any
- *                     question in the topic may point back at one with
+ *   `worked-example`  **the mathematics spine** — PRD §6.5a — **kept**. Every
+ *                     topic opens with one. Its lines are numbered **steps**,
+ *                     the working is set aligned, every step speaks on tap, and
+ *                     any question in the topic may point back at one with
  *                     `fromStepId`. It is what `read-text` is *for* here.
- *   `word-problem`    the ATP's own contexts — *financial*, *measurement*,
- *                     *comparing two or more quantities of the same kind
- *                     (ratio)*, *comparing two quantities of different kinds
- *                     (rate)*. **Every topic ends in one** (PRD §5.3).
+ *   `word-problem`    the mathematics ATP's own contexts — *financial*,
+ *                     *measurement*, *comparing two or more quantities of the
+ *                     same kind (ratio)*, *comparing two quantities of
+ *                     different kinds (rate)*. **Kept** from the source; FAL
+ *                     topics inherit the `read-text` carrier even when the
+ *                     text they read is not a mathematics problem.
  *   `information`     a definition, a unit table, a set of instructions.
+ *   `story`           a short story the class reads whole (T1 W7–8, T2 W3–4).
+ *   `dialogue/play`   a play script the class reads in parts (T1 W9–10, T3
+ *                     W7–8). One type, because in the ATP a dialogue leads into
+ *                     the play and the same sentence-level grammar is taught
+ *                     through both.
+ *   `poem`            a poem studied for its devices (T2 W5–6, T3, T4 W5–6).
+ *   `informational/report`  a radio or newspaper report (T1 W1–2, T2 W7–8).
+ *                     One type, because both are the ATP's *non-fiction*
+ *                     reading with the same comprehension work.
+ *   `instructional`   a recipe or set of instructions to sequence (T2 W1–2,
+ *                     T4 W3–4).
+ *   `persuasive`      a radio advertisement or speech argued in class (T1 W5–6).
+ *   `comic/art`       a cartoon or comic strip read for its script and art
+ *                     (T3 W9–10).
+ *   `folklore`        a folk tale, myth or legend retold for its moral (T3
+ *                     W1–2, T4 W1–2).
+ *   `transactional`   a piece of transactional writing — a letter, a diary —
+ *                     read as the model for the writing task (T1 W9–10, T2
+ *                     FAT 4, T4 FAT 8).
  *
  * > **The worked example is not decoration and it is not a hint.** It is the
  * > thing the lesson is about, and the child comes back to it three times: it
@@ -208,7 +237,16 @@ export type TermNumber = 1 | 2 | 3 | 4;
 export type TextType =
   | 'worked-example'
   | 'word-problem'
-  | 'information';
+  | 'information'
+  | 'story'
+  | 'dialogue/play'
+  | 'poem'
+  | 'informational/report'
+  | 'instructional'
+  | 'persuasive'
+  | 'comic/art'
+  | 'folklore'
+  | 'transactional';
 
 /**
  * The interaction component library — PRD §7. **Twenty types: fourteen

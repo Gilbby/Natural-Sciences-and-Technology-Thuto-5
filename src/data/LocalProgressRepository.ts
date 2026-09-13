@@ -20,15 +20,15 @@ import type { ProgressRepository } from './ProgressRepository';
  */
 
 const KEY = {
-  child: 'nstthuto5:child',
-  progress: (childId: string) => `nstthuto5:progress:${childId}`,
-  badges: (childId: string) => `nstthuto5:badges:${childId}`,
-  daily: (childId: string, date: string) => `nstthuto5:day:${childId}:${date}`,
-  habitWeek: (childId: string, weekStart: string) => `nstthuto5:habits:${childId}:${weekStart}`,
+  child: 'enfal6:child',
+  progress: (childId: string) => `enfal6:progress:${childId}`,
+  badges: (childId: string) => `enfal6:badges:${childId}`,
+  daily: (childId: string, date: string) => `enfal6:day:${childId}:${date}`,
+  habitWeek: (childId: string, weekStart: string) => `enfal6:habits:${childId}:${weekStart}`,
   /** The personal dictionary. One key for the whole year (PRD §6.6). */
-  wordWall: (childId: string) => `nstthuto5:wall:${childId}`,
-  settings: 'nstthuto5:settings',
-  yearStart: 'nstthuto5:school-year-start',
+  wordWall: (childId: string) => `enfal6:wall:${childId}`,
+  settings: 'enfal6:settings',
+  yearStart: 'enfal6:school-year-start',
 };
 
 /** v1 ships one local profile; profile selection arrives in v1.1 (PRD §6.2). */

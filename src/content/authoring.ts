@@ -52,7 +52,7 @@ import type {
  * is the same shape a MongoDB collection would hand back.
  */
 
-export const SUBJECT_ID = 'ns-tech-g5';
+export const SUBJECT_ID = 'en-fal-g6';
 
 export function txt(en: string): LocalisedText {
   return { en };

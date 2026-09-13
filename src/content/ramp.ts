@@ -99,10 +99,11 @@ export const SUPPORT_RAMP: RampRule[] = [
     maxParagraphs: 2,
     maxSentenceWords: 12,
     entryMode: 'app-first',
-    // Fractions, two blocks of pattern and the flat shapes. This is not the
-    // term to demote the app's voice: a child meeting *denominator* and
-    // *equivalent* for the first time should not also be meeting them alone on
-    // the page.
+    // Instructional texts: recipes, directions, imperatives, sequence words,
+    // dictionary work — and the first formal read-aloud, read aloud and
+    // marked. This is not the term to demote the app's voice: a child who must
+    // stand and read instructions aloud should not be meeting the text class
+    // alone on the page.
     appFirstFor: [],
     describe: '80w · 2 paras · sentences ≤ 12 · app reads first',
   },
@@ -113,7 +114,7 @@ export const SUPPORT_RAMP: RampRule[] = [
     maxSentenceWords: 13,
     entryMode: 'child-first',
     // **The worked example keeps the app's voice for the whole year.** It is
-    // the one text in a topic that carries the method, and a child who decodes
+    // the one text in a topic that carries the skill, and a child who decodes
     // it slowly has decoded it wrong. Everything else goes child-first here.
     appFirstFor: ['worked-example'],
     describe: '110w · 3 paras · sentences ≤ 13 · child first, app first for a worked example',

@@ -141,7 +141,7 @@ export interface AppSettings {
 
 export const DEFAULT_SETTINGS: AppSettings = {
   audioEnabled: true,
-  // Up from the Grade 3 chassis's 0.85, because a Grade 5 child follows
+  // Up from the Grade 3 chassis's 0.85, because a Grade 6 child follows
   // connected speech; still below normal, because they are following it *in
   // print at the same time* and *in an additional language* (PRD §12, §14.7).
   narrationRate: 0.95,

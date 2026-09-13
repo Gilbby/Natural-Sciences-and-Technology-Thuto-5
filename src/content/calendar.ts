@@ -2,7 +2,7 @@ import { termColours } from '@/theme/tokens';
 import type { LocalisedText, TermNumber } from '@/types';
 
 /**
- * The Grade 5 school year — PRD §5.5.
+ * The Grade 6 English First Additional Language school year — PRD §5.5.
  *
  * Terms are defined as *week offsets from the start of the school year* rather
  * than fixed calendar dates. That keeps one description working for both cases
@@ -10,59 +10,34 @@ import type { LocalisedText, TermNumber } from '@/types';
  * that lays the year out from the day a child first opens the app. Only this
  * file changes when a school sets its own dates.
  *
- * ── The windows are 11 / 12 / 10 / 10, and they were counted ───────────────
+ * ── The windows are four 13-week slices of a 52-week year ──────────────────
  *
- * **[changed] Not the 10 / 12 / 11 / 10 the Life Skills lineage carries.** PRD
- * §5.5 is explicit about this and about why: *"Do not inherit the term windows
- * from the Life Skills lineage. Read the ATP's own header row, count the
- * columns, and set the windows from that."*
+ * The app calendar uses **four 13-week windows inside a 52-week year** (PRD
+ * §5.5). The windows begin at week offsets **0 / 13 / 26 / 39**, so each term
+ * gets the same room and the Star Challenge lands in **week 13** of every
+ * quarter — the last lesson of an even, complete block.
  *
- * So they were counted, off `2026_ATP_Mathematics_Grade 5.pdf`:
- *
- * | Term | Printed week columns | Window |
- * | ---: | -------------------: | -----: |
- * |    1 | WEEK 1 … WEEK 11     | **11** |
- * |    2 | WEEK 1 … WEEK 12     | **12** |
- * |    3 | WEEK 1 … WEEK 10     | **10** |
- * |    4 | WEEK 1 … WEEK 10     | **10** |
- *
- * **Term 2 is the twelve-week one**, which is the opposite of the Life Skills
- * document, and a fork that inherited that app's windows would have run Term 3
- * one week long and had nowhere to put the Term 2 test.
- *
- * ── The one contradiction, resolved here and named in the README ───────────
- *
- * PRD §16.6 finding 2: *"When two parts of this document disagree, resolve it
- * in writing and in the code. A contradiction silently resolved is a
- * contradiction the next fork inherits."*
- *
- * **The ATP's Term 4 prints ten week columns; the real South African term 4 is
- * about nine teaching weeks and closes in the second week of December.** They
- * cannot both be honoured. **Resolved in favour of the ATP's printed ten**,
- * because §5.5 says to read the windows off the ATP's own grid and because the
- * alternative is to drop a week the document accounts twenty-one hours to.
- *
- * **It costs the child nothing.** Those twenty-one hours are the ATP's revision
- * and end-of-year test, and the app puts nothing in them (PRD §1.1). The last
- * thing this app actually schedules is the **Term 4 Star Challenge in week 7**,
- * which lands in the last week of November — inside the real school year with
- * a fortnight to spare. The window is a container, and its final three weeks
- * are deliberately empty.
+ * This is an **app-calendar decision, not a claim that the ATP has thirteen
+ * printed teaching weeks per strand**. The FAL ATP schedules its assessments
+ * inside the term's weeks rather than by fixed columns, and the app's four
+ * equal windows keep one rhythm running all year. The term colours ride the
+ * Thuto family's fifth-grade set: **amber / teal / clay / purple** (PRD line
+ * 515).
  *
  * ── Four assessment blocks, and the app is in none of them ─────────────────
  *
  * | Term | What the ATP prints | What the app puts there |
  * | ---: | ------------------- | ----------------------- |
- * |    1 | wk 7 assignment · wk 10 revision · wk 11 test | Star Challenge in **week 10** |
- * |    2 | wk 1 investigation · wk 11–12 revision and test | Star Challenge in **week 11** |
- * |    3 | the project (spanning) · wk 9–10 revision and test | Star Challenge in **week 9** |
- * |    4 | wk 7–10 revision and test (21 h) | Star Challenge in **week 7** |
+ * |    1 | FAT 2 essay (wk 5–6) · FAT 3 response to texts (wk 7–8) · FAT 1 oral read-aloud (wk 9–10) | Star Challenge in **week 13** |
+ * |    2 | FAT 2 longer transactional (wk 6–7) · FAT 3 response to texts (wk 8–9) · FAT 1 oral read-aloud (wk 10–11) | Star Challenge in **week 13** |
+ * |    3 | FAT 2 essay (wk 9–10) · FAT 3 response to texts (wk 11–12) · FAT 1 oral read-aloud (wk 5–6) | Star Challenge in **week 13** |
+ * |    4 | FAT 2 longer transactional (wk 7–8) · FAT 3 response to texts (wk 9–10) · FAT 1 oral read-aloud (wk 2–3) · end-of-year test | Star Challenge in **week 13** |
  *
- * > **Term 1 week 7 is an assignment in the middle of the term, and the app
- * > leaves it alone** (PRD §5.5). *Adding And Taking Away* runs weeks 4–6 and
- * > *Times* runs weeks 8–9, straight through it. An app that put a celebration
- * > in week 7 would be celebrating in the middle of the one topic in this year
- * > a child most needs to stay inside.
+ * > **The app schedules the child's own reading, writing and speaking practice;
+ * > it never schedules the ATP's formal assessments** (PRD §1.1, §5.5). Those
+ * > blocks belong to the school. The app's Star Challenges are a motivational
+ * > beat at the end of each even window — a celebration of a finished stretch
+ * > of learning, not an exam.
  *
  * **`atpDays` is not printed in this ATP.** The field is kept and filled from
  * the South African school calendar, and it is labelled as such below — a
@@ -105,49 +80,56 @@ export const TERM_PLANS: TermPlan[] = [
   {
     term: 1,
     title: { en: 'Term 1' },
-    // The five topics are all number: counting it, writing it, adding it,
-    // taking it away, timesing it (PRD §8.1).
-    subtitle: { en: 'Life and living' },
-    emoji: '🌿',
+    // Reports, news and balanced argument: reading and writing what happened,
+    // what people believe, and what makes a fair point (ATP §2.1).
+    subtitle: { en: 'Reports, news and argument' },
+    emoji: '📰',
     colour: termColours[1],
     weekOffset: 0,
-    // Eleven printed columns: nine topic weeks, the week 7 assignment, and the
-    // week 11 test.
+    // Baseline check-in in week 1, then reports and news, a novel or reader,
+    // persuasion and radio adverts, a short story, and a play.
     weeks: 13,
     atpDays: 65,
   },
   {
     term: 2,
     title: { en: 'Term 2' },
-    // Division, fractions, two blocks of pattern, and the flat shapes.
-    subtitle: { en: 'Matter and materials' },
-    emoji: '⚙️',
+    // Instructions and directions: the steps that make a recipe or a route
+    // followable, and how the words of a text shape what it asks of us (ATP §2.1).
+    subtitle: { en: 'Instructions and directions' },
+    emoji: '🧭',
     colour: termColours[2],
     weekOffset: 13,
-    // **Twelve, and it is the long term in this document.** Week 1 is the
-    // investigation and weeks 11–12 are revision and the test.
+    // A novel or reader with daily reading, instructions we follow, how we
+    // speak in a register, and the term's assessments in weeks 10–11.
     weeks: 13,
     atpDays: 65,
   },
   {
     term: 3,
     title: { en: 'Term 3' },
-    // Solids, the data cycle, probability, and the first of the measurement.
-    subtitle: { en: 'Energy and change' },
-    emoji: '🔌',
+    // Folklore: the myths, legends and fables a people tell, the characters
+    // they remember, and what a novelette carries between its covers (ATP §2.1).
+    subtitle: { en: 'Folklore and the novel' },
+    emoji: '📖',
     colour: termColours[3],
     weekOffset: 26,
+    // A myth, legend or fable and a character sketch, then a novelette with its
+    // message, plot and conflict, and half an hour of daily reading.
     weeks: 13,
     atpDays: 65,
   },
   {
     term: 4,
     title: { en: 'Term 4' },
-    // Time, capacity, mass, and the shapes that move.
-    subtitle: { en: 'Planet Earth and beyond' },
-    emoji: '🌍',
+    // Folklore carried on, the interview and the oral presentation, and the
+    // habit of saying in a few words what a story meant to us (ATP §2.1).
+    subtitle: { en: 'Folklore, interviews and summary' },
+    emoji: '🗣️',
     colour: termColours[4],
     weekOffset: 39,
+    // A legend and a myth retold, an interview and an oral presentation, and
+    // writing a summary of five to ten sentences.
     // Ten printed columns; the last four are the ATP's revision and its
     // end-of-year test, and the app puts nothing in them. See the header.
     weeks: 13,

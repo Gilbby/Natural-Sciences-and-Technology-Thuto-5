@@ -32,8 +32,8 @@ export function promptText(
  * this app is for small children never opens it again (PRD §4.15).
  */
 export const ui = {
-  appName: { en: 'Thuto 5' },
-  subtitle: { en: 'Natural Sciences and Technology' },
+  appName: { en: 'Thuto 6' },
+  subtitle: { en: 'English First Additional Language' },
   homeGreeting: { en: 'Tap a day to open a lesson.' },
   todaysLesson: { en: "Today's lesson" },
   nextLesson: { en: 'Your next lesson' },
@@ -110,7 +110,7 @@ export const ui = {
   myTrophies: { en: 'My trophies' },
   trophiesPrompt: { en: 'Everything you have won this year.' },
   noTrophiesYet: { en: 'Finish a topic to win your first badge.' },
-  yearComplete: { en: 'You finished the whole Grade 5 Natural Sciences and Technology year.' },
+  yearComplete: { en: 'You finished the whole Grade 6 English First Additional Language year.' },
   myStars: { en: 'Stars' },
   myLessonsDone: { en: 'Lessons' },
   myBadges: { en: 'Badges' },

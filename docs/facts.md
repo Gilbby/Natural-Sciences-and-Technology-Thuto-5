@@ -18,3 +18,14 @@ Claims in lessons point to one of these references. Sources are the DBE 2026 Ann
 - `soil-types` - Sandy, clayey and loamy soil have different properties and support life. Source: DBE ATP, Planet Earth and Beyond.
 - `sedimentary-rocks` - Sedimentary rocks form in layers over a very long time; sandstone, shale and limestone are examples. Source: DBE ATP, Planet Earth and Beyond.
 - `south-african-fossils` - South Africa has a rich fossil record, including fossils from the Cradle of Humankind. Source: DBE ATP, Planet Earth and Beyond.
+
+# English FAL facts register
+
+Claims in lessons point to one of these references. Source is the DBE 2026 Annual Teaching Plan for English First Additional Language.
+
+- `drama-listening` - A drama is a story told on stage; when you listen, follow what each character says and how the story moves from beginning to end. Source: DBE ATP, English FAL.
+- `drama-review` - A review shares what someone thought of a play; a good review says what happened and gives a reason. Source: DBE ATP, English FAL.
+- `drama-script` - A script tells actors what to say; write the character name, then a colon, then the line they speak. Source: DBE ATP, English FAL.
+- `folklore-listening` - A folktale is a story passed down long ago; follow who the characters are and how the tale moves from beginning to end. Source: DBE ATP, English FAL.
+- `folklore-reading` - A folktale often has a hero, a challenge and a lesson; look for the setting and the order of events. Source: DBE ATP, English FAL.
+- `folklore-retelling` - To retell a folktale, use a clear beginning, middle and ending, and say the events in your own words. Source: DBE ATP, English FAL.

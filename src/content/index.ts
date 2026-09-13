@@ -13,7 +13,8 @@ export { SUBJECT_ID } from './authoring';
 const TERMS = [TERM_1, TERM_2, TERM_3, TERM_4];
 
 /**
- * Everything the app ships with — the whole Grade 5 Mathematics year (PRD §8).
+ * Everything the app ships with — the whole English First Additional Language
+ * Grade 6 year: the four term plans, their topics and lessons (PRD §8).
  *
  * New topics are appended to a term file as data. No code changes are needed as
  * long as they use an activity type that already exists (PRD §11).

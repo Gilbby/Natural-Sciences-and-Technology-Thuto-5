@@ -34,7 +34,7 @@ import type { LadderEntry, Skill, TermNumber } from '@/types';
  * **The general form, now confirmed twice: build the language app first, then
  * spend its ledger in every other subject of the same grade.** The language
  * app is not one of five siblings; it is the budget the other four spend, and
- * it costs it nothing to export. **NS and Tech and Social Sciences Grade 5
+ * it costs it nothing to export. **NS and Tech and Social Sciences Grade 6
  * should both do this, and neither should re-cut a ledger.**
  *
  * **Why one term and not zero:** the FAL app teaches a word in the fortnight it
@@ -123,11 +123,11 @@ export const GRADE_4_TAUGHT: string[] = [
 ];
 
 /**
- * **What a Grade 5 Mathematics child arrives holding, in English.**
+ * **What a Grade 6 English FAL child arrives holding, in English.**
  *
  * *English FAL Thuto 5*'s arrival ledger, copied verbatim: its Grade 4 base
  * plus everything that app's Grade 4 year taught, about 1 850 words. The Grade
- * 5 FAL year's own vocabulary is **not** here — it sits in `FAL_LEDGER` below
+ * 6 FAL year's own vocabulary is **not** here — it sits in `FAL_LEDGER` below
  * and is released a term at a time, which is what "one term behind" means
  * (PRD §8.2a).
  *
@@ -138,8 +138,8 @@ export const GRADE_4_TAUGHT: string[] = [
  * ledger means nothing and the check is theatre.
  *
  * **Do not edit this list to make a check pass.** It is a copy of a measurement
- * another app made about this child. The honest fix for a Mathematics text that
- * trips on a word is to gloss the word.
+ * another app made about this child. The honest fix for a text that trips on a
+ * word is to gloss the word.
  */
 export const CORE_WORDS: string[] = [
   /* ---- the arrival ledger of *English FAL Thuto 4*, copied verbatim ---- */
@@ -634,24 +634,20 @@ const TERM_4_LADDER: LadderCycle[] = [
 ];
 
 /**
- * The seventeen Grade 5 teaching cycles of the year, in order.
+ * The seventeen Grade 6 teaching cycles of the year, in order.
  *
  * Seventeen, not twenty: three of the ATP's cycles carry no teaching content —
  * the June controlled test, the term 4 revision and oral assessment week, and
  * the end-of-year controlled test — and therefore have no rung.
  */
 /**
- * **The Grade 5 FAL year, cycle by cycle — the budget this app spends.**
+ * **The Grade 6 FAL year, cycle by cycle — the budget this app spends.**
  *
- * Copied out of *English FAL Thuto 5*'s `LANGUAGE_LADDER`. It is not this app's
- * curriculum and nothing here is taught by this app; it is a record of when the
- * child met each word next door, and `wordsUpTo` releases it **one term
- * behind** (PRD §8.2a).
- *
- * > **Read the FAL app's ladder and confirm this is still a copy before
- * > trusting it.** If that app's ledger moved after its build, this one moves
- * > with it. **The relationship is the specification; these rows are a copy of
- * > it.**
+ * These are this app's own teaching cycles, read from the ATP's fourth column.
+ * A child meets a word in the fortnight that teaches it, and does not yet hold
+ * it the same week — so `wordsUpTo` releases each term's words **one term
+ * behind**, for the child who has genuinely met them (PRD §8.2a). The lag is
+ * the smallest honest gap between *taught* and *known*.
  */
 export const FAL_LEDGER: LadderCycle[] = [
   ...TERM_1_LADDER,
@@ -868,7 +864,7 @@ export function itemAvailable(item: string, met: Set<string>): boolean {
  * fail a term 1 lesson that legitimately says "pronoun". The forward-reference
  * check is about the item a cycle *introduces*.
  *
- * **Everything in `GRADE_4_TAUGHT` is ordinal 0**, so no Grade 5 activity can
+ * **Everything in `GRADE_4_TAUGHT` is ordinal 0**, so no Grade 6 activity can
  * ever trip on an item the child met last year.
  */
 export const ITEM_FIRST_TAUGHT: Map<string, number> = (() => {
@@ -920,7 +916,7 @@ export const AMBIGUOUS_ITEMS = new Set<string>([
   'past tense', 'future tense', 'tenses', 'tense', 'question', 'questions',
   'statement', 'statements', 'prefix', 'prefixes', 'suffix', 'suffixes',
   'verb', 'verbs', 'adjective', 'adjectives', 'noun', 'nouns',
-  // Added for Grade 5: every one of these is an ordinary English word before
+  // Added for Grade 6: every one of these is an ordinary English word before
   // it is a rung, and each fired on a lesson that was doing nothing wrong.
   'command', 'commands', 'connection', 'connections', 'rhyme', 'rhymes',
   'rhythm', 'rhythms', 'phrase', 'phrases', 'clause', 'clauses',
@@ -932,16 +928,16 @@ export const AMBIGUOUS_ITEMS = new Set<string>([
  * **Everything the child may be shown as a known word in this term** —
  * PRD §8.2a, §1.1 rule 5.
  *
- * `CORE_WORDS` plus every *English FAL Thuto 5* cycle from the terms **before**
- * this one. A Mathematics word problem in term 2 may use any word that app had taught
+ * `CORE_WORDS` plus every *English FAL Thuto 6* cycle from the terms **before**
+ * this one. An English text in term 2 may use any word that app had taught
  * by the end of term 1; a term 1 text may use only the arrival ledger.
  *
  * | Term | May use                          |
  * | ---: | -------------------------------- |
- * |    1 | the FAL Grade 4 ledger (~1 850)  |
- * |    2 | + FAL Grade 5 term 1             |
- * |    3 | + FAL Grade 5 term 2             |
- * |    4 | + FAL Grade 5 term 3             |
+ * |    1 | the FAL Grade 5 ledger (~1 850)  |
+ * |    2 | + FAL Grade 6 term 1             |
+ * |    3 | + FAL Grade 6 term 2             |
+ * |    4 | + FAL Grade 6 term 3             |
  *
  * **The week is not read.** The lag is a whole term, deliberately: a child does
  * not hold a word the week she meets it, and a term is the granularity a person
