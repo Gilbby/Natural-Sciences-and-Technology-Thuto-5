@@ -34,11 +34,11 @@ for (const topic of TOPICS) {
 for (const lesson of ALL_LESSONS) for (const [index, activity] of lesson.activities.entries()) inspect(activity, `${lesson._id}/activity-${index + 1}`);
 
 if (errors.length) {
-  console.error('English FAL Grade 6 - content check failed');
+  console.error('English Fal Thuto 6 - content check failed');
   for (const error of errors) console.error(`  - ${error}`);
   process.exit(1);
 }
-console.log('English FAL Grade 6 - content check');
+console.log('English Fal Thuto 6 - content check');
 console.log(`  Topics: ${TOPICS.length}`);
 console.log(`  Lessons: ${ALL_LESSONS.length}`);
 console.log(`  Areas: ${[...new Set(TOPICS.map((topic) => topic.area))].join(', ')}`);

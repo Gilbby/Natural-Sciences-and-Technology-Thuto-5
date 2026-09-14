@@ -32,7 +32,7 @@ export function promptText(
  * this app is for small children never opens it again (PRD §4.15).
  */
 export const ui = {
-  appName: { en: 'Thuto 6' },
+  appName: { en: 'English Fal Thuto 6' },
   subtitle: { en: 'English First Additional Language' },
   homeGreeting: { en: 'Tap a day to open a lesson.' },
   todaysLesson: { en: "Today's lesson" },

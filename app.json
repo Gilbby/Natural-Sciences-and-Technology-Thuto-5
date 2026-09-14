@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "English FAL Grade 6 Thuto 6",
+    "name": "English Fal Thuto 6",
     "slug": "en-fal-g6",
     "scheme": "enfal6",
     "version": "0.1.0",
@@ -8,7 +8,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#7E57C2"
     },
@@ -20,8 +20,8 @@
       "package": "za.co.thuto.enfal6",
       "adaptiveIcon": {
         "backgroundColor": "#7E57C2",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
+        "foregroundImage": "./assets/icon.png",
+        "backgroundImage": "./assets/icon.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
@@ -41,7 +41,7 @@
       ]
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./assets/icon.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -50,7 +50,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash-icon.png",
+          "image": "./assets/icon.png",
           "resizeMode": "contain",
           "backgroundColor": "#7E57C2"
         }

@@ -29,3 +29,12 @@ Claims in lessons point to one of these references. Source is the DBE 2026 Annua
 - `folklore-listening` - A folktale is a story passed down long ago; follow who the characters are and how the tale moves from beginning to end. Source: DBE ATP, English FAL.
 - `folklore-reading` - A folktale often has a hero, a challenge and a lesson; look for the setting and the order of events. Source: DBE ATP, English FAL.
 - `folklore-retelling` - To retell a folktale, use a clear beginning, middle and ending, and say the events in your own words. Source: DBE ATP, English FAL.
+- `newspaper-article` - A newspaper article reports what happened using a heading and short paragraphs of facts. Source: DBE ATP, English FAL.
+- `novel-chapters` - A novel is a long story broken into chapters; reading one chapter at a time helps you follow the characters. Source: DBE ATP, English FAL.
+- `persuasive-text` - A persuasive text tries to convince the reader by giving reasons to agree. Source: DBE ATP, English FAL.
+- `short-story-parts` - A short story has a beginning, a middle and an ending that fit together. Source: DBE ATP, English FAL.
+- `dialogue-talking` - A dialogue shows two people talking; each new speaker begins on a new line. Source: DBE ATP, English FAL.
+- `instructional-text` - An instructional text gives clear steps so the reader can follow them in order. Source: DBE ATP, English FAL.
+- `story-elements` - A story has characters, a setting, a problem and a solution. Source: DBE ATP, English FAL.
+- `poem-words` - A poem uses carefully chosen words and sounds to create a picture or a feeling. Source: DBE ATP, English FAL.
+- `info-text-facts` - An information text gives facts about a topic and is organised with headings. Source: DBE ATP, English FAL.
